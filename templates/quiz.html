@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Game</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>Question {{ q_num }} / 10</h2>
+        <p>{{ question.question | safe }}</p>
+
+        <form method="POST">
+            {% for choice in choices %}
+                <button type="submit" name="answer" value="{{ choice }}"
+                    class="option
+                    {% if selected_answer %}
+                        {% if choice == correct_answer %}correct
+                        {% elif choice == selected_answer %}wrong
+                        {% else %}default
+                        {% endif %}
+                    {% else %}default{% endif %}">
+                    {{ choice | safe }}
+                </button>
+            {% endfor %}
+        </form>
+
+        {% if selected_answer %}
+            <a href="{{ url_for('next_question') }}" class="next-btn">Next Question</a>
+        {% endif %}
+    </div>
+</body>
+</html>

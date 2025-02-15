@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select a Topic</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Select a Quiz Topic</h1>
+        <a href="{{ url_for('select_difficulty', topic='computer') }}" class="topic-btn">Computer Science</a>
+        <a href="{{ url_for('select_difficulty', topic='history') }}" class="topic-btn">History</a>
+        <a href="{{ url_for('select_difficulty', topic='mathematics') }}" class="topic-btn">Mathematics</a>
+        <a href="{{ url_for('select_difficulty', topic='mathematics') }}" class="topic-btn">General Knowledge</a>
+    </div>
+</body>
+</html>

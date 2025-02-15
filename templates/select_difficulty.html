@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select Difficulty</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Select Difficulty for {{ topic|replace("_", " ")|capitalize }} Quiz</h1>
+        <div class="difficulty-buttons">
+            <a href="{{ url_for('start_quiz', topic=topic, difficulty='easy') }}" class="difficulty-btn easy">Easy</a>
+            <a href="{{ url_for('start_quiz', topic=topic, difficulty='medium') }}" class="difficulty-btn medium">Medium</a>
+            <a href="{{ url_for('start_quiz', topic=topic, difficulty='hard') }}" class="difficulty-btn hard">Hard</a>
+        </div>
+    </div>
+</body>
+</html>

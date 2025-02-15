@@ -2,7 +2,7 @@ from flask import Flask, render_template, request, session, redirect, url_for
 import requests
 import random
 
-app = Flask(__name__)
+app = Flask(__name__, template_folder="templates")
 app.secret_key = 'your_secret_key'  # Required for session management
 
 # Dictionary mapping topics & difficulty levels to API URLs
